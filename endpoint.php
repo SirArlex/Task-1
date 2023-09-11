@@ -8,7 +8,7 @@ if (isset($_GET['slack_name']) && isset($_GET['track'])) {
 	
 	$currentDayOfWeek = gmdate('l');
 	$utcTime = gmdate("Y-m-d\TH:i:s\Z");
-	$githubFileUrl = '';
+	$githubFileUrl = 'https://github.com/SirArlex/Task-1/blob/main/endpoint.php';
 	$githubRepoUrl = 'https://github.com/SirArlex/Task-1';
 
 	$response = array(
@@ -25,7 +25,7 @@ if (isset($_GET['slack_name']) && isset($_GET['track'])) {
     echo json_encode($response);
 } else {
     // error message
-    $errorResponse = array('error' => 'Slack name and track are required.');
+    $errorResponse = array('error' => 'name and track required.');
     header('Content-Type: application/json');
     echo json_encode($errorResponse);
 }
